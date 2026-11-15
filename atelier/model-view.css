@@ -1,0 +1,16 @@
+.model-figure{margin:18px 0 22px;width:100%;min-width:0;--stage-tint:#e3efeb;--spot:#476b60}
+[data-scene=agent]{--stage-tint:#dae8ef;--spot:#365b70}
+[data-scene=lab]{--stage-tint:#e1dfef;--spot:#655874}
+[data-scene=presale]{--stage-tint:#ddebe2}
+.model-port{position:relative;width:100%;aspect-ratio:1.46;overflow:hidden;border-radius:20px;isolation:isolate;background:radial-gradient(ellipse at 32% 21%,#ffffffed,transparent 71%),linear-gradient(158deg,#ffffff88,var(--stage-tint));cursor:grab;touch-action:pan-y}
+.model-port:active{cursor:grabbing}.model-port canvas,.model-points{position:absolute;inset:0;width:100%;height:100%;display:block}
+.model-points{pointer-events:none;z-index:2}
+#works .model-points button{position:absolute;transform:translate(-50%,-100%);pointer-events:auto;background:#fffffff2;color:#253c3e;border:1px solid #718b894f;padding:3px 8px;border-radius:14px;font:500 clamp(10px,1vw,13px)/1.5 var(--sans);box-shadow:0 2px 7px #21463c18;white-space:nowrap;cursor:pointer}
+.model-points button:after{content:'';position:absolute;top:100%;left:50%;width:1px;height:8px;background:var(--spot)}.model-points button:before{content:'';position:absolute;top:calc(100% + 6px);left:calc(50% - 2px);width:5px;height:5px;border-radius:50%;background:var(--spot);box-shadow:0 0 0 2px #fff}
+#works .model-points button[aria-pressed=true]{background:var(--spot);color:white}
+.model-figure figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:8px 3px;color:#526465;font:11px/1.5 var(--sans)}.model-figure figcaption strong{font:500 15px var(--ser);color:#293e40}
+.ticket .model-figure{margin:0}.spec-card{height:95px}.spec-heading{padding:12px 18px}.spec-front{background:linear-gradient(110deg,#f9fcf9,#edf4ef)}
+.model-figure.unavailable .model-port{display:none}.model-figure.unavailable figcaption{display:none}
+@media(max-width:760px){#works :is(#agent,#lab,#presale,#experience)>.project-intro>.model-figure{order:1;margin:0}#works :is(#agent,#lab,#presale,#experience)>.bench{order:1}#seoul .ticket{order:4}.model-port{aspect-ratio:1.65}.model-figure figcaption{padding-bottom:3px}}
+
+.model-points button:after{height:var(--leader,8px)}.model-points button:before{top:calc(100% + var(--leader,8px) - 2px)}
