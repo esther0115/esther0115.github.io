@@ -7,13 +7,13 @@
   <title>
    张楉晗 · 观察庭院
   </title>
-  <meta content="跟张楉晗一起改一条首尔路线、核查经营指标，走进三个独立 AI 项目与咨询运营经历。" name="description"/>
+  <meta content="张楉晗的个人主页，收录首尔行程工具、经营数据分析、售前咨询项目，以及运营、咨询和研究经历。" name="description"/>
   <link href="garden.css" rel="stylesheet"/>
   <link href="cases.css" rel="stylesheet"/>
   <link href="atelier.css" rel="stylesheet"/>
   <link href="portfolio.css" rel="stylesheet"/>
- <link href="exhibits.css" rel="stylesheet"/>
- <link rel="stylesheet" href="fieldwork.css"/><link rel="stylesheet" href="studio.css"/><link rel="stylesheet" href="stories.css"/><link rel="stylesheet" href="model-view.css"/></head>
+ <link href="exhibits.css?v=1115b" rel="stylesheet"/>
+ <link rel="stylesheet" href="fieldwork.css"/><link rel="stylesheet" href="studio.css?v=1115b"/><link rel="stylesheet" href="stories.css"/><link rel="stylesheet" href="model-view.css"/></head>
  <body>
   <a class="skip" href="#seoul">
    跳至我的项目
@@ -48,19 +48,20 @@
      <h1><span>张楉晗</span></h1>
      <h2 lang="en">Ruohan Zhang</h2>
      <p>
-      我做 AI 产品，也追问它的答案从哪里来。一起改一条路线、查一个数字，或看看我怎么发现模型说错了。
+      我想做 AI 产品或运营，也对数据分析感兴趣。
      </p>
      <a class="enter" href="#seoul">
       试用 Seoul Deck　↓
      </a>
      <button class="take-card" type="button" aria-haspopup="dialog"><i aria-hidden="true">R.</i> 拿起我的 3D 名片</button>
      <a class="also-try" href="#lab">
-      和我找错 ↗
+      看我的测试记录 ↗
      </a>
     </div>
     <figure class="garden">
      <div aria-label="蓝花楹庭院，选择场景中的项目或经历" class="scene" role="group">
-      <img alt="我坐在喷泉旁的长椅上，抬起脸看头顶的蓝花楹。" class="court" fetchpriority="high" src="img/courtyard-spring.webp"/>
+      <img alt="我坐在喷泉旁的长椅上，抬起脸看头顶的蓝花楹。" class="court court-day" fetchpriority="high" src="img/courtyard-spring.webp"/>
+      <img class="court court-dusk" fetchpriority="low" src="img/arrival.webp" alt="暮色里，我坐在蓝花楹下的长椅上，身旁的庭灯已经亮了。"/>
       <svg aria-hidden="true" class="shimmer" preserveaspectratio="none" viewbox="0 0 700 467">
        <path class="water" d="M248.81 230q1 12 0 73" fill="none" opacity=".66" stroke="#fff4cf" stroke-dasharray="1 11.8" stroke-width=".8">
        </path>
@@ -120,7 +121,7 @@
       </span>
       <div>
        <button class="guide-index" type="button" aria-haspopup="dialog">章节目录</button>
-       <button aria-pressed="true" id="light">
+       <button type="button" id="light">
         切到暮色 ☾
        </button>
        <button aria-pressed="false" id="motion">
@@ -135,7 +136,7 @@
      UCL　/　数据科学与公共政策硕士
     </span>
     <span>
-     AI 产品　 ·　 数据分析　 ·　 咨询与运营
+     产品 · 运营 · 数据分析
     </span>
    </div>
   </div>
@@ -198,7 +199,7 @@
     <div class="card-toolbar"><h2 id="card-title">张楉晗的名片</h2><form method="dialog"><button aria-label="放回名片">放回 ↙</button></form></div>
     <div id="card-object" class="object-stage" aria-label="蓝花楹微缩庭院名片，可左右拖动或用方向键旋转" tabindex="0"><div class="card-poster"><img src="img/courtyard-spring.webp" alt="蓝花楹下的庭院名片"/><strong>张楉晗</strong></div></div>
     <div class="card-actions"><button id="card-zoom" aria-pressed="false">放大</button><span>左右拖动旋转</span><button id="turn-card">翻到背面 ↻</button></div>
-    <p id="wildlife-hint" hidden><button id="still-flight" type="button" aria-pressed="false">暂停动效</button></p><div id="card-front-info"><span>AI 产品与数据分析</span><a href="#seoul">试我的首尔产品 ↗</a></div>
+    <p id="wildlife-hint" hidden><button id="still-flight" type="button" aria-pressed="false">暂停动效</button></p><div id="card-front-info"><span>产品 · 运营 · 数据分析</span><a href="#seoul">打开 Seoul Deck ↗</a></div>
     <div id="card-back-info" hidden><a href="mailto:zrh2026rhz@163.com">zrh2026rhz@163.com ↗</a><button id="card-copy">复制邮箱</button></div>
    </dialog>
    <main id="works">
@@ -278,7 +279,7 @@
      </details>
      <details class="leaf">
       <summary>
-       拆开七步 AI 链路
+       从攻略原文到一天的行程
       </summary>
       <div class="qs" id="legend">
       </div>
@@ -409,15 +410,17 @@
         使用产品
        </button>
        <button aria-pressed="false" id="mode-record">
-        试 AI 案例
+        回放改行程案例
        </button>
       </div>
-      <button class="phone-focus" type="button" aria-expanded="false">放大操作 ⤢</button><div class="handset">
+      <button class="phone-focus" type="button" aria-expanded="false">放大操作 ⤢</button>
+      <p class="phone-scroll-hint" id="phone-scroll-hint">在手机屏幕里上下滑动，电脑上也可以用滚轮。</p>
+      <div class="handset">
        <div aria-hidden="true" class="earpiece">
        </div>
-       <iframe id="live-phone" loading="lazy" src="seoul/index.html#pocket" title="可操作的 Seoul Deck 手机应用">
+       <iframe aria-describedby="phone-scroll-hint" id="live-phone" loading="lazy" src="seoul/index.html#pocket" title="可操作的 Seoul Deck 手机应用">
        </iframe>
-       <div class="routebook" hidden="" id="recorded-phone">
+       <div class="routebook" hidden="" id="recorded-phone" aria-describedby="phone-scroll-hint">
         <div class="ph-body" id="phbody">
         </div>
         <div aria-label="首尔产品视图" class="ph-tabs" id="phtabs">
@@ -449,7 +452,7 @@
        我的判断
       </small>
       <p aria-live="polite" data-comment="agent">
-       我把计算交给程序，也给没有成本字段的查询留了拒答出口。
+       金额由程序计算。订单里没有成本，所以我只列销售额，不估利润。
       </p>
      </div>
      <figure class="model-figure" data-scene="agent"><div class="model-port" tabindex="0" role="group" aria-label="订单分拣台，拖动或用左右键旋转"><div class="model-points"></div></div><figcaption><strong>订单分拣台</strong><span>拖动旋转 · 点选标记</span></figcaption></figure><div class="evidence-cards">
@@ -458,7 +461,7 @@
         <strong>
          78→92%
         </strong>
-        开发集，5 轮错误归因
+        开发集上，分五轮排查错答
        </summary>
        <p>
         按查询结果、回答、行为分项判分。规则对着开发集调，分数偏乐观
@@ -613,10 +616,10 @@
       售前咨询工作流
      </h2>
      <h3>
-      一句买家提问，可能需要两个处理结果。
+      买家同时问尺码和保暖性，哪些能当场答？
      </h3>
      <p class="brief">
-      我把买家提问拆成子问题，逐项对照商品资料。有依据的起草答复，缺资料的生成任务，校验失败的转给人工。
+      我把买家提问拆成子问题，逐项对照商品资料。能查到的先拟好答复，缺的资料记下来请人补；答复和资料对不上，就交给同事复核。
      </p>
      <div class="authornote">
       <small>
@@ -884,14 +887,14 @@
     </a>
    </div>
   </footer>
-  <script src="cases.js">
+  <script src="cases.js?v=1115b">
   </script>
-  <script src="atelier.js">
+  <script src="atelier.js?v=1115b">
   </script>
   <script src="portfolio.js">
   </script>
- <script src="exhibits.js"></script><script src="inquiry.js"></script>
+ <script src="exhibits.js?v=1115b"></script><script src="inquiry.js"></script>
   <script src="seoul/three-r128.js"></script>
-  <script src="objects.js"></script>
-  <script src="miniatures.js"></script><script src="model-view.js"></script><script src="fieldwork.js"></script></body>
+  <script src="objects.js?v=1115b"></script>
+  <script src="miniatures.js"></script><script src="model-view.js?v=1115b"></script><script src="fieldwork.js?v=1115b"></script></body>
 </html>

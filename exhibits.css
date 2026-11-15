@@ -12,13 +12,14 @@
 .project-intro .authornote{border-color:var(--a)}#works .room .bench{border-top:0;padding-top:0}
 #works .room .q[aria-pressed=true],#works .room fieldset button[aria-pressed=true]{background:var(--a)}
 #works #seoul .bench{position:static}.device-station{position:relative;grid-template-columns:auto auto;justify-content:center;align-items:center;gap:12px}
+.device-station .phone-scroll-hint{grid-column:1/-1;margin:0;color:#405850;font:400 13px/1.45 var(--sans);text-align:center}
 .device-station .handset,.device-station .expand{grid-column:1/-1}
 .handset{display:block;inline-size:min(100%,460px);width:min(100%,460px);height:auto;aspect-ratio:9/19.5;min-height:0;border:5px solid #414743;border-radius:49px;padding:0;box-shadow:0 0 0 1.5px #afb5ae,0 18px 25px -15px #304b4566,8px 30px 55px -26px #40544e6b}
 .device-station{grid-template-columns:minmax(0,auto) minmax(0,auto);width:min(100%,460px);margin:auto;justify-content:stretch}
 .handset iframe,.handset .routebook{position:absolute;inset:15px 4px 14px;width:calc(100% - 8px);height:calc(100% - 29px);border-radius:33px}
 .modebar{background:#f2f5edb0;justify-self:start}.modebar button{white-space:nowrap}
 .phone-focus{background:none;color:#354e43;font-size:13px;justify-self:end;padding:7px;border-bottom:1px solid currentColor!important}
-.phone-open{overflow:hidden}.device-station:popover-open,.device-station.focus-fallback{position:fixed;inset:0;z-index:50;width:100%;height:100dvh;max-width:none;max-height:none;color:#283c33;border:0;padding:8px 12px;background:#dae5df;display:grid;align-content:stretch;grid-template-columns:auto auto;grid-template-rows:auto minmax(0,1fr);justify-content:center;column-gap:20px}
+.phone-open{overflow:hidden}.device-station:popover-open,.device-station.focus-fallback{position:fixed;inset:0;z-index:50;width:100%;height:100dvh;max-width:none;max-height:none;color:#283c33;border:0;padding:8px 12px;background:#dae5df;display:grid;align-content:stretch;grid-template-columns:auto auto;grid-template-rows:auto auto minmax(0,1fr);justify-content:center;column-gap:20px}
 .device-station:popover-open .handset,.device-station.focus-fallback .handset{height:100%;width:min(96vw,540px);aspect-ratio:auto;border-radius:30px}
 .device-station:popover-open .expand,.device-station.focus-fallback .expand{display:none}
 .ticket{display:grid;grid-template-columns:30% 1fr;align-items:stretch;background:#fffcf1;max-width:500px;box-shadow:2px 6px 0 -3px #a1b7a7,0 9px 19px #35503c14;margin:24px 0 16px;transform:rotate(-1deg)}

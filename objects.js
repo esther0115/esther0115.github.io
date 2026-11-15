@@ -240,7 +240,7 @@
       c.fillStyle='#f4f8f5';c.fillRect(0,0,w,h);
       c.fillStyle='#273d46';c.font='50px Georgia';c.fillText('Ruohan Zhang',78,115);
       c.font='92px Georgia, "Hiragino Sans GB", serif';c.fillText('张楉晗',75,285);
-      c.fillStyle='#456159';c.font='37px sans-serif';c.fillText('AI 产品  /  数据分析',80,370);
+      c.fillStyle='#456159';c.font='37px sans-serif';c.fillText('产品 · 运营 · 数据分析',80,370);
       c.fillStyle='#b6c6be';c.fillRect(80,450,w-160,2);
       c.fillStyle='#243a42';c.font='42px Georgia';c.fillText('zrh2026rhz@163.com',80,h-85);
     });
@@ -250,7 +250,7 @@
       const glow=c.createLinearGradient(0,0,w,h);glow.addColorStop(0,'#e3efe4');glow.addColorStop(1,'#f5f7fd');c.fillStyle=glow;c.fillRect(7,7,w-14,h-14);
       c.fillStyle='#22434b';c.font='84px Georgia, "Hiragino Sans GB", serif';c.fillText('张楉晗',56,h-115);
       c.font='34px Georgia';c.fillText('Ruohan Zhang',60,h-55);
-      c.textAlign='right';c.font='27px sans-serif';c.fillText('AI 产品 · 数据分析',w-55,h-57);
+      c.textAlign='right';c.font='27px sans-serif';c.fillText('产品 · 运营 · 数据分析',w-55,h-57);
     });
     front.position.z=.122;
     const lawn=group(root,0,.00,.13); lawn.rotation.x=Math.PI/2;

@@ -6,6 +6,9 @@
 .cover .scene,.cover.day .scene{margin:0;width:100%;aspect-ratio:1.5}
 .cover.day .court{mask-image:linear-gradient(to right,transparent,#000 4%,#000 97%,transparent),linear-gradient(to bottom,transparent,#000 5%,#000 95%,transparent)}
 .garden .scene{position:relative}
+.cover.day .court-dusk,.cover:not(.day) .court-day{display:none}
+.cover:not(.day) .garden-points a span{background:#342a32ed;color:#fff4e3;border-color:#aa9685}
+.cover:not(.day) .garden-points a i{background:#efc590;border-color:#5c4343;box-shadow:0 0 0 3px #49373a,0 0 9px #f9d2a660}
 .garden-points{position:absolute;inset:0;z-index:5;display:block;pointer-events:none}
 .garden-points a{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);min-height:44px;display:flex;align-items:center;justify-content:center;gap:4px;color:#263835;text-decoration:none;pointer-events:auto;white-space:nowrap}
 .garden-points a span{background:#f8faf4eb;padding:4px 8px;border:1px solid #56685265;border-radius:15px;font:500 12px/1.4 var(--sans);box-shadow:0 1px 5px #32392c24}

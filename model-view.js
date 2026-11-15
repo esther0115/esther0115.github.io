@@ -39,7 +39,7 @@
     const positions=[[[-1.54,1.13,-.52],[-.15,1.58,-.10],[1.5,.65,.15]],[[-1.12,1.57,-.16],[.34,.76,.53],[1.18,1.27,-.32]],[[-1.57,1.02,.39],[.03,.98,-.43],[1.54,.94,.47]]];
     const points=index===3?[link('学习记录',[-.72,.80,.07],()=>$('#pane').scrollIntoView({block:'center'}))]:
       evidenceNames[index].map((n,k)=>link(n,positions[index][k],()=>choose(evidence,k),k===point));
-    return {model:['greenhouse','hospital','battery','reading'][index],index,choice:point,title:titles[index]+' · 场景示意',points};
+    return {model:['greenhouse','hospital','battery','reading'][index],index,choice:point,title:titles[index],points};
   }
   class View {
     constructor(figure){

@@ -158,15 +158,10 @@
     catch{const range=document.createRange();range.selectNodeContents($('#card-back-info a'));getSelection().removeAllRanges();getSelection().addRange(range);$('#card-copy').textContent='已选中邮箱'}
   };
 
-  const scenes = [
-    ['produce','farm-scene','生鲜周配箱 · 场景示意'],
-    ['hospital','ward-scene','医院集团 · 场景示意'],
-    ['battery','cell-scene','储能产业 · 结构示意'],
-    ['books','library-scene','学习与研究 · 场景示意']
-  ];
+  const scenes = ['produce','hospital','battery','books'];
   function updateJob(){
     const index=selected('#jobs button');
-    $('#experience').dataset.work=scenes[index][0];
+    $('#experience').dataset.work=scenes[index];
     const evidence=[...document.querySelectorAll('#pane fieldset button')];
     const button=$('#inspect-job');button.hidden=!evidence.length;
     if(evidence.length){

@@ -14,8 +14,7 @@ preference.addEventListener('change', event => pauseWater(event.matches));
 motion.onclick = () => pauseWater(!cover.classList.contains('still'));
 light.onclick = () => {
   const day = cover.classList.toggle('day');
-  light.setAttribute('aria-pressed', day);
-  light.textContent = day ? '暮色阅读 ☾' : '浅色阅读 ☼';
+  light.textContent = day ? '切到暮色 ☾' : '切到晨光 ☼';
 };
 document.querySelector('.guide-index').onclick = () => dialog.showModal();
 dialog.addEventListener('click', event => {

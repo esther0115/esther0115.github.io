@@ -1,8 +1,5 @@
 (()=>{
   const $=s=>document.querySelector(s), all=s=>[...document.querySelectorAll(s)], pressed=(s)=>all(s).findIndex(b=>b.getAttribute('aria-pressed')==='true');
-  const cover=$('.cover'),court=$('.court');
-  function daylight(){const d=cover.classList.contains('day');court.src=d?'img/courtyard-spring.webp':'img/arrival.webp';$('#light').textContent=d?'切到暮色 ☾':'切到晨光 ☼'}
-  daylight();$('#light').addEventListener('click',daylight);
   const frame=$('#live-phone'), station=$('.device-station'),focus=$('.phone-focus');
   function toggleFocus(on){
     if(on){if(!station.matches(':popover-open'))station.showPopover();focus.focus()}
