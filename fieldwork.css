@@ -1,0 +1,67 @@
+/* Each workspace has the materials of the actual case. */
+.cover.day{--fg:#203337;--mute:#47585a;--rule:#8aa9a444;background:radial-gradient(ellipse at 78% 54%,#f4f2ec 5%,transparent 52%),linear-gradient(119deg,#eef7f3,#fcfbf7 56%,#e9eef5)}
+.day .meet span{color:#2e4144;background:#f6faf6eb;border-color:#91aba4;text-shadow:none;padding:2px 7px;border-radius:3px}
+.intro h1{margin:24px 0 8px}.intro h1 span{font-family:var(--ser);font-size:clamp(52px,6vw,96px);font-weight:500;letter-spacing:.01em}
+.intro h2{font:italic clamp(20px,2.2vw,36px)/1.3 Georgia;color:var(--mute);letter-spacing:.01em}
+.take-card,.end-card{color:inherit;background:none;border:0;font:500 14px var(--sans);cursor:pointer}
+.take-card{display:inline-flex;align-items:center;gap:7px;margin:12px 0 0 12px;padding:7px 9px;border-radius:7px;background:#ffffff84}.take-card i{display:inline-grid;place-items:center;transform:rotate(-12deg);width:33px;height:22px;border-radius:4px;background:linear-gradient(145deg,#effaf5,#bedad4);box-shadow:0 2px 1px #769b97;color:#395e62;font:italic 15px Georgia}
+.take-card:hover i{transform:rotate(-3deg) translateY(-2px)}.cover:not(.day) .take-card{background:#655767}
+.also-try{display:inline-block}
+#calling-card{padding:clamp(16px,3vw,35px);border:1px solid #fff;border-radius:21px;background:radial-gradient(ellipse at 50% 53%,#e0ebe5,transparent 54%),linear-gradient(140deg,#f7fcfa,#e7eef8);width:min(640px,94vw);max-height:94dvh;overflow:auto;color:#233c43;box-shadow:0 32px 100px #152f3b4a}
+#calling-card::backdrop{background:#23404959;backdrop-filter:blur(6px)}
+.card-toolbar,.card-actions,#card-front-info,#card-back-info{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.card-toolbar h2{font:500 clamp(18px,2vw,25px) var(--ser)}.card-toolbar button,.card-actions button,#card-back-info button{border:1px solid #b1c5c6;border-radius:28px;background:#f8fbfbd9;color:#203c45;padding:8px 14px;font-size:13px}
+.card-actions{margin-bottom:14px}.card-actions span,#card-front-info span{font-size:12px;color:#425c62}#card-front-info,#card-back-info{border-top:1px solid #b4c6c4;padding:13px 0 0;font-size:14px}#card-front-info a,#card-back-info a{text-decoration:underline;text-underline-offset:4px}
+.object-stage{position:relative;isolation:isolate;cursor:grab;touch-action:pan-y;user-select:none;outline-offset:-4px}.object-stage:active{cursor:grabbing}.object-stage canvas{position:absolute;inset:0;display:block;width:100%;height:100%}
+.object-stage:before{content:'';position:absolute;inset:67% 19% 8%;background:radial-gradient(ellipse,#50696d2b,transparent 68%);pointer-events:none}
+#card-object{width:100%;height:clamp(215px,42vh,390px)}
+.card-poster{position:absolute;inset:10% 8%;border-radius:14px;background:#fafaf5;overflow:hidden}.card-poster img{width:100%;height:100%;object-fit:cover}.card-poster strong{position:absolute;bottom:8%;left:6%;color:#263e39}.rendered .card-poster{visibility:hidden}
+#calling-card[data-face=back] .card-poster img{opacity:.12}
+#calling-card[data-face=back] .card-poster:after{content:'zrh2026rhz@163.com';position:absolute;top:46%;left:8%;font:clamp(16px,3vw,30px) Georgia}
+.object-stage.no-gl:not(#card-object):after{content:attr(data-description);position:absolute;inset:0;display:grid;place-items:center;color:#48606a}
+.directory{background:#f7fbfaee;border-color:#cbd9d7;backdrop-filter:blur(10px)}
+#works #seoul{background:radial-gradient(ellipse at 84% 32%,#d0ebe5,transparent 57%),#f2fbf7;--a:#256b65}
+.ticket{display:block;transform:none;background:none;box-shadow:none;max-width:none;border-block:1px solid #88b8ab88}
+.ticket-body{border:0;padding:17px 0}.ticket-body>small{display:none}#departure button{background:transparent;border:1px solid #95bfb5;border-radius:22px;padding-inline:12px}#departure [aria-pressed=true]{background:#246562}
+.ticket output{border:0;color:#385b58;padding:0}.ticket-body h4{font-family:var(--sans);font-size:15px;font-weight:600}
+#route-preview{display:flex;flex-wrap:wrap;gap:4px 0;margin-top:13px}#route-preview span{position:relative;padding:15px 9px 0 0;font:11px var(--sans);color:#314e51}#route-preview span:before{content:'';position:absolute;inset:5px 0 auto;height:2px;background:#6ea69b}#route-preview span:after{content:'';position:absolute;left:0;top:2px;width:5px;height:5px;background:#f6fcf9;border:2px solid #3e9080;border-radius:50%}#route-preview span:last-child:before{display:none}
+#works #agent{background:linear-gradient(113deg,#f7fbff,#e3eef9);--a:#265c79}
+.ledger{background:linear-gradient(125deg,#ffffffd9,#f2f9ff);border:1px solid #c3d9e6;border-radius:18px;box-shadow:0 14px 36px -30px #59829b}
+.ledger-body{grid-template-columns:1.15fr 1fr;gap:12px;margin:6px 0 15px;min-height:0}#data-object{height:clamp(130px,13vw,185px)}
+#works .ledger .q{background:transparent;border-color:#b7c9d2;border-radius:16px}#works .ledger .q[aria-pressed=true]{background:#2c6179}
+#works #presale{background:radial-gradient(ellipse at 22% 32%,#dceae5,transparent 52%),#f4f8f6;--a:#206657}
+.sample-tray{background:transparent;border:0;border-radius:0;box-shadow:none;padding:0}
+#garment-object{height:clamp(170px,17vw,255px);background:radial-gradient(ellipse at center,#ffffffa8,transparent 65%)}
+#sample-card{grid-template-columns:1fr;margin:0 0 16px}
+.spec-card{height:86px}.spec-front,.spec-back{transform:none;background:#f8fcf9;border:1px solid #abccc1;border-radius:9px;box-shadow:none}
+.spec-front{display:flex;align-items:center}.spec-back{transform:rotateY(180deg)}.spec-thumb,.stampbox{display:none}
+.spec-heading{padding:10px 16px;display:grid;grid-template-columns:1fr auto;width:100%;align-items:center}.spec-heading small{grid-column:1/-1}.spec-heading em{margin:0}
+.spec-heading b{font:500 18px var(--sans)}.spec-back{padding:8px 15px}.spec-back strong{font:14px/1.5 var(--sans)}
+#works #lab{background:#edf0fa;--a:#504c84}.lightbox{background:none;border:0;box-shadow:none;padding:0}
+#lab .lightbox>.mast{border-color:#b4b8ce}#lab #filmstrip{background:transparent;gap:5px;padding:0}
+#lab .film{border:0!important;background:#e0e4f1;color:#3f4962;border-radius:8px;font-size:13px}
+#lab .film[aria-pressed=true]{background:#4b527b;color:white}.film:before{display:none}#lab .play{background:#fff;border:1px solid #d1d8e6;box-shadow:none;border-radius:12px}
+#lab-source{padding:12px 16px;background:#dfe6f3;border-radius:9px;color:#364862}#lab-source>div{display:flex;gap:22px}#lab-source span{font-size:11px}#lab-source b{display:block;font:500 16px var(--sans)}
+#works #experience{background:#edf8f0;--a:#2a6359;transition:background-color .45s}
+#works #experience[data-work=hospital]{background:#eaf4f9;--a:#35647a}#works #experience[data-work=battery]{background:#e8f1f1;--a:#285d64}#works #experience[data-work=books]{background:#f1f0fa;--a:#60547b}
+.archive-box{padding-top:0}#jobs{margin:10px 0;gap:5px;flex-wrap:wrap;box-shadow:none}
+#works #jobs button,#works #jobs button[aria-pressed=true]{flex:0 1 auto;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent!important;color:#364e51!important;padding:8px 7px;line-height:1.5}
+#works #jobs button[aria-pressed=true]{border-color:var(--a);font-weight:650}
+#pane{max-width:none;border:0;border-top:1px solid #a5c2ba;border-radius:0;background:none;box-shadow:none;padding:18px 0 0;margin:10px 0 0}#pane:before{display:none}
+#pane fieldset button{background:#ffffff80;border-color:#a4c0b7}#works #experience #pane fieldset button[aria-pressed=true]{background:var(--a);border-color:var(--a)}
+.experience-model{position:relative;display:grid;justify-items:center}#job-object{width:100%;height:clamp(200px,21vw,300px)}
+#inspect-job{padding:7px 12px;background:#ffffffbd;border:1px solid #a1bab5;border-radius:18px;font:13px var(--sans);color:var(--a);margin:-3px 0 7px;position:relative}
+footer{background:#eef5f5}.end-card{display:block;padding:10px 0;border-bottom:1px solid #96afab}
+@media(min-width:900px){
+ #works #experience{grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr)}
+ #experience .project-intro{position:sticky;top:100px}
+ #lab #filmstrip{grid-row:2/4}#lab .film{grid-template-columns:1fr auto;padding:10px;text-align:left}
+ #lab-source,#lab .play{grid-column:2}
+}
+@media(max-width:760px){
+ #seoul .ticket{order:3}.card-actions button,.card-toolbar button{min-height:40px}
+ #lab-source{margin:8px 0}.take-card{font-size:13px}.intro .also-try{margin-left:9px}
+ #works #experience .project-intro .brief{margin-bottom:4px}.ledger-body{grid-template-columns:1fr 1.12fr}
+}
+.sample-inspect{border-block:1px solid #b3cfc4;margin:2px 0 14px;font-size:13px}
+.sample-inspect summary{padding:8px 0;color:#33584c}
