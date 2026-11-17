@@ -48,6 +48,7 @@
       this.models=new Map();this.inView=false;
       this.observer=new IntersectionObserver(([entry])=>{this.inView=entry.isIntersecting;if(this.inView)this.refresh()},{rootMargin:'180px'});
       this.observer.observe(this.port);
+      window.addEventListener('botanyready',()=>{if(this.inView)this.draw()});
       new ResizeObserver(()=>{if(this.inView)this.draw()}).observe(this.port);
       this.port.addEventListener('pointerdown',event=>{
         if(event.target.closest('button')||event.button!==0)return;
