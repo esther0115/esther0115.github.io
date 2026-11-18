@@ -1,4 +1,4 @@
-import {T,group,box,oval,rod,material} from './scene.js?v=1118h';
+import {T,group,box,oval,rod,material} from './scene.js?v=1118i';
 const experiences=[
  ['ucl-ba','UCL · 全球人道主义研究','2022 – 2025','本科教育','伦敦大学学院（UCL），全球人道主义研究本科。','#journey'],
  ['deloitte','德勤管理咨询（上海）有限公司','2024.06 – 2024.09','储能产业研究','以企查查数据为底表，按信用代码去重，核验官网、招聘和中标信息；清洗企业问卷，按产业链环节分类。','#experience'],

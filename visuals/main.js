@@ -1,6 +1,6 @@
-import {createMachine} from './machine.js?v=1118h';
-import {createClock} from './clock.js?v=1118h';
-import {setupGarden} from './garden.js?v=1118h';
+import {createMachine} from './machine.js?v=1118i';
+import {createClock} from './clock.js?v=1118i';
+import {setupGarden} from './garden.js?v=1118i';
 const $=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)],reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const records=[
  {title:'Seoul Deck',date:'2026.06 – 2026.10',href:'#seoul',summary:'把收藏的首尔攻略，变成有口碑依据、能随时调整的一天。独立完成需求分析、产品设计、规则与评测。',facts:[['226 篇','小红书帖子'],['5,817 条','评论构成需求与口碑依据']],color:'#efb7ca'},
@@ -41,3 +41,9 @@ controls.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{if(busy)retur
 controls.querySelectorAll('[data-dx]').forEach(b=>{b.onpointerdown=e=>{if(busy)return;if(!clawView)mountMachine($('#claw-stage'));assisted=false;controls.querySelectorAll('[data-mode]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.mode==='manual'));b.setPointerCapture(e.pointerId);clawView?.move(+b.dataset.dx,+b.dataset.dz)};b.onpointerup=b.onpointercancel=b.onlostpointercapture=()=>clawView?.move(0,0);b.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();clawView?.move(+b.dataset.dx,+b.dataset.dz)}};b.onkeyup=()=>clawView?.move(0,0)});
 controls.querySelector('[data-read]').onclick=openPrize;controls.querySelector('[data-reset]').onclick=()=>{clawView?.resetCollection();renderCollection();$('#machine-status').textContent='已明确重置收藏，五只玩偶回到柜内。'};
 function renderCollection(){const ids=clawView?.collected||JSON.parse(sessionStorage.getItem('portfolio-collected')||'[]');collection.replaceChildren();const h=document.createElement('strong');h.textContent='本次收藏 · '+ids.length+' / 5';collection.append(h);ids.forEach(i=>{const row=document.createElement('div');row.className='collection-item';const span=document.createElement('span');span.textContent=records[i].title+' · '+records[i].date;const b=document.createElement('button');b.textContent='阅读项目';b.onclick=()=>{choose(i);openPrize()};row.append(span,b);collection.append(row)})}renderCollection();
+// Preserve direct chapter links while the existing Seoul embed finishes layout.
+if(['#journey','#arcade'].includes(location.hash)){
+ let untouched=true;for(const event of ['wheel','pointerdown','keydown','touchstart'])window.addEventListener(event,()=>untouched=false,{once:true,passive:true});
+ const align=()=>{for(const delay of [350,1200])setTimeout(()=>{if(untouched&&['#journey','#arcade'].includes(location.hash))document.querySelector(location.hash)?.scrollIntoView({block:'start',behavior:'instant'})},delay)};
+ if(document.readyState==='complete')align();else window.addEventListener('load',align,{once:true});
+}
