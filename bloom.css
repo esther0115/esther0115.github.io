@@ -25,3 +25,10 @@
 .arcade-copy p{color:#59644f}.picker-current time{color:#64745b;font-size:11px}.picker-subject{color:#66715b!important}.machine-note{color:#67735d}
 
 #claw-stage{cursor:pointer}#claw-stage:focus-visible{outline:2px solid #77628f;outline-offset:-4px}
+
+/* Integrated cabinet and sculptural timepiece, 2026-11-17. */
+.journey .clock-figure{height:500px;margin:0;min-width:0}.journey #bloom-clock{background:none;min-height:420px}.clock-caption{letter-spacing:.08em}.clock-bloom{right:8px;bottom:39px;transform:none;border:1px solid #8e9a8455;border-radius:24px;padding:10px 16px;background:#fbfaf2;font-size:13px;color:#4e6557}.clock-bloom span{font:12px/1.4 var(--sans);white-space:nowrap}.clock-bloom:hover{transform:none;background:#e5e9dc}.arcade #claw-stage{height:640px;cursor:default}.arcade-play:before{inset:8% 2% 12%;background:radial-gradient(ellipse,#d4d3df75,transparent 68%)}.machine-note{min-height:2em}.machine-controls button:disabled{opacity:.6;cursor:wait}.prize-ticket{border-top-width:5px}.prize-flower{display:none}.prize-ticket h2{margin-right:20px}
+@media(max-width:760px){.journey .clock-figure{height:390px}.journey #bloom-clock{min-height:310px}.journey .clock-bloom{bottom:32px;right:5px;padding:9px 13px}.arcade #claw-stage{height:520px}.arcade-layout{gap:20px}.machine-controls output{font-size:10px}.arcade-play:before{inset:0}.journey .clock-caption{font-size:7px}}
+
+/* Keep the new collection entry reachable on narrow screens. */
+@media(max-width:380px){.cover header nav{gap:11px}.cover header .brand{gap:6px;font-size:8px}}

@@ -64,15 +64,5 @@
   return hdri.then(tex=>{const pm=new T.PMREMGenerator(renderer);pm.compileEquirectangularShader();const env=pm.fromEquirectangular(tex).texture;pm.dispose();return env});
  }
  window.botanicalAssets={place,jacaranda,light};
- // Small, peripheral specimens, with no plants over data or control hotspots.
- const models=window.portfolioModels;if(!models)return;
- for(const [key,settings] of Object.entries({
-  orders:{x:-1.80,y:.01,z:.85,height:.59,rotation:.7},
-  sale:{x:1.87,y:.015,z:-.85,height:.55,rotation:1.2},
-  review:{x:-1.90,y:.015,z:-.83,height:.52,rotation:.4},
-  reading:{x:1.84,y:.015,z:.73,height:.57,rotation:.3}
- })){
-  const original=models[key];models[key]=(root,state)=>{const controls=original(root,state);place(root,'potted_plant_02',settings);return controls};
- }
- const cafe=models.cafe;models.cafe=(root,state)=>{const controls=cafe(root,state);const branch=jacaranda(root,{scale:.51});branch.position.set(1.66,.20,.27);branch.rotation.y=.4;return controls};
+
 })();
