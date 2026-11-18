@@ -1,6 +1,6 @@
-import {createMachine} from './machine.js?v=1118j';
-import {createClock} from './clock.js?v=1118j';
-import {setupGarden} from './garden.js?v=1118j';
+import {createMachine} from './machine.js?v=1118k';
+import {createClock} from './clock.js?v=1118k';
+import {setupGarden} from './garden.js?v=1118k';
 const $=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)],reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const records=[
  {title:'Seoul Deck',date:'2026.06 – 2026.10',href:'#seoul',summary:'把收藏的首尔攻略，变成有口碑依据、能随时调整的一天。独立完成需求分析、产品设计、规则与评测。',facts:[['226 篇','小红书帖子'],['5,817 条','评论构成需求与口碑依据']],color:'#efb7ca'},
