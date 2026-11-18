@@ -1,4 +1,4 @@
-import {T,group,part,material,tube,clamp,smooth,mix} from './scene.js?v=1118g';
+import {T,group,part,material,tube,clamp,smooth,mix} from './scene.js?v=1118h';
 // A single connected tube with a five-lobed, everted lip. Rings retain their
 // topology and attachment point through the whole opening motion.
 export function corollaPoint(u,a,open){
@@ -49,6 +49,6 @@ export function createBranch(parent){
  let values=blooms.map(()=>0),target=0,last=0,start=0,from=[...values];
  const set=value=>{values=values.map(()=>clamp(value));blooms.forEach((f,i)=>f.set(values[i]));target=clamp(value);from=[...values];start=0};
  const move=(value,now,instant=false)=>{if(instant){set(value);return}from=[...values];target=value;start=now;last=now};
- const update=now=>{if(!start)return false;last=now;let moving=false;blooms.forEach((f,i)=>{const t=clamp((now-start-i*150)/2450);values[i]=mix(from[i],target,smooth(t));f.set(values[i]);if(t<1)moving=true});if(!moving)start=0;return moving};
- return {root,set,move,update,get target(){return target},get values(){return [...values]},get moving(){return !!start}};
+ const update=now=>{if(!start)return false;last=now;let moving=false;blooms.forEach((f,i)=>{const t=clamp((now-start-i*150)/2000);values[i]=mix(from[i],target,smooth(t));f.set(values[i]);if(t<1)moving=true});if(!moving)start=0;return moving};
+ return {root,blooms,set,move,update,get target(){return target},get values(){return [...values]},get moving(){return !!start}};
 }

@@ -1,4 +1,4 @@
-import {T,group,part,oval,material,tube,label,seeded,clamp} from './scene.js?v=1118g';
+import {T,group,part,oval,material,tube,label,seeded,clamp} from './scene.js?v=1118h';
 // Share the loaded image with the linear bump texture only after decoding.
 const pileBump=new T.Texture();
 const furTexture=new T.TextureLoader().load(new URL('../assets/textiles/ivory-short-pile.png',import.meta.url).href,tex=>{pileBump.image=tex.image;pileBump.needsUpdate=true;});furTexture.colorSpace=T.SRGBColorSpace;furTexture.wrapS=furTexture.wrapT=T.RepeatWrapping;furTexture.repeat.set(2.7,2.7);furTexture.anisotropy=8;
@@ -43,14 +43,14 @@ export const bunnyPalette=[
  {color:'#e5decf',inner:'#ecdbd1',accent:'#8d7b9d'}
 ];
 export function createBunny(parent,{index=0,quality=1,seed=37}={}){
- const root=group(parent),bodyGroup=group(root),palette=bunnyPalette[index%bunnyPalette.length],coat=fabric(palette.color),cream=fabric(new T.Color(palette.color).lerp(new T.Color('#f2e5cf'),.24)),inside=fabric(palette.inner,true),parts=[],ears=[],density=Math.max(.2,quality)*1.65;
+ const root=group(parent),bodyGroup=group(root),palette=bunnyPalette[index%bunnyPalette.length],coat=fabric(palette.color),cream=fabric(new T.Color(palette.color).lerp(new T.Color('#f2e5cf'),.24)),inside=fabric(palette.inner,true),parts=[],ears=[],feet=[],density=Math.max(.2,quality)*1.65;
  function stuffed(geo,mat,x,y,z,sx,sy,sz,count,len=.017){const m=part(bodyGroup,geo,mat,x,y,z);m.scale.set(sx,sy,sz);parts.push([m,count,len]);return m}
  const body=stuffed(stuffedGeometry({pear:.18,flat:.3}),coat,0,.68,-.02,.33,.48,.275,4300);
  stuffed(headGeometry(),coat,0,1.31,.05,.34,.315,.30,9200,.018);
 
  for(const side of [-1,1]){
   const arm=stuffed(stuffedGeometry(),coat,side*.343,.70,.08,.108,.32,.12,950);arm.rotation.z=side*.10;
-  const foot=stuffed(stuffedGeometry({flat:.5}),coat,side*.225,.255,.25,.168,.245,.22,1400);foot.rotation.x=-.28;foot.rotation.z=-side*.13;
+  const foot=stuffed(stuffedGeometry({flat:.5}),coat,side*.225,.255,.25,.168,.245,.22,1400);feet.push(foot);foot.rotation.x=-.28;foot.rotation.z=-side*.13;
  }
  stuffed(stuffedGeometry(),cream,0,.47,-.295,.14,.14,.13,650,.022);
  for(const side of [-1,1]){
@@ -63,5 +63,5 @@ export function createBunny(parent,{index=0,quality=1,seed=37}={}){
  // Small fabric loop and woven number tag; no hard metallic badge.
  const tag=group(bodyGroup,.296,.55,.13);tag.rotation.z=-.12;const linen=material('#e9dfc9',{roughness:1,specularIntensity:.04});part(tag,new T.BoxGeometry(.105,.14,.007),linen);label(tag,{z:.005,w:.09,h:.12,draw(c,w,h){c.fillStyle=palette.accent;c.textAlign='center';c.font='500 '+h*.38+'px Georgia';c.fillText(String(index+1).padStart(2,'0'),w/2,h*.64)}});
  if(index===1||index===6){const scarf=material(palette.accent,{roughness:1,sheen:.7,specularIntensity:.03});const collar=part(bodyGroup,new T.TorusGeometry(.217,.033,12,64),scarf,0,1.015,.04);collar.rotation.x=Math.PI/2;const end=part(bodyGroup,new T.BoxGeometry(.095,.26,.018),scarf,.10,.89,.282);end.rotation.z=-.16;}
- root.userData.ears=ears;root.userData.body=body;root.userData.tick=(time,lift=0)=>{for(let i=0;i<ears.length;i++)ears[i].rotation.z=(i?1:-1)*(Math.sin(time*.85+i+index)*.012+lift*.075);body.scale.x=.33*(1-lift*.018)};root.userData.palette=palette;return root;
+ root.userData.feet=feet;root.userData.ears=ears;root.userData.body=body;root.userData.tick=(time,lift=0)=>{for(let i=0;i<ears.length;i++)ears[i].rotation.z=(i?1:-1)*(Math.sin(time*.85+i+index)*.012+lift*.075);feet.forEach((f,i)=>f.rotation.x=-.28+lift*.09+Math.sin(time*2+i)*lift*.025);body.scale.x=.33*(1-lift*.018)};root.userData.palette=palette;return root;
 }
