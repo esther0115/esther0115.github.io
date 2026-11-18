@@ -1,4 +1,4 @@
-import {T,group,part,material,tube,clamp,smooth,mix} from './scene.js?v=1118d';
+import {T,group,part,material,tube,clamp,smooth,mix} from './scene.js?v=1118e';
 // A single connected tube with a five-lobed, everted lip. Rings retain their
 // topology and attachment point through the whole opening motion.
 export function corollaPoint(u,a,open){
@@ -42,7 +42,7 @@ export function createBranch(parent){
   }
  }
  const blooms=[];
- for(const [x,y,z,scale,rx,ry,rz] of [[-.30,-.25,.02,1.12,-.20,-.30,-.3],[.22,.04,.06,1.05,.12,.24,.15],[-.05,.42,.05,.94,-.35,-.28,-.3],[.23,.70,-.02,.79,.18,.32,.3],[.47,.30,-.08,.73,-.2,.4,-.2]]){
+ for(const [x,y,z,scale,rx,ry,rz] of [[-.30,-.25,.02,1.12,-.30,-.72,-.3],[.22,.04,.06,1.05,.12,.24,.15],[-.05,.42,.05,.94,-.35,-.60,-.3],[.23,.70,-.02,.79,.18,.70,.3],[.47,.30,-.08,.73,-.2,.90,-.2]]){
   tube(root,[[x*.25,y-.13,-.13],[x*.8,y-.02,-.07],[x,y,z]],.007,wood,18,7);
   const anchor=group(root,x,y,z),flower=corolla(anchor,scale,[rx,ry,rz]);blooms.push(flower);
  }
