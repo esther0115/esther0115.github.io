@@ -1,5 +1,5 @@
-import {T,Stage,group,part,material,label,oval,rod,tube,reduced} from './scene.js?v=1118c';
-import {createBranch} from './botany.js?v=1118c';
+import {T,Stage,group,part,material,label,oval,rod,tube,reduced} from './scene.js?v=1118d';
+import {createBranch} from './botany.js?v=1118d';
 export function createClock(el){
  const s=new Stage(el,{span:2.25,width:4.5,camera:[0,.3,12],target:[0,0,0],exposure:.82}),r=s.root;
  const ink=material('#253e38',{metalness:.68,roughness:.32}),steel=material('#a6b2b1',{metalness:.94,roughness:.24}),sage=material('#7f8b78',{roughness:.82});
