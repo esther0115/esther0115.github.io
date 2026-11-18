@@ -1,10 +1,10 @@
-import {T,Stage,group,part,material,label,oval,rod,tube,reduced} from './scene.js?v=1118f';
-import {createBranch} from './botany.js?v=1118f';
+import {T,Stage,group,part,material,label,oval,rod,tube,reduced} from './scene.js?v=1118g';
+import {createBranch} from './botany.js?v=1118g';
 export function createClock(el){
  const s=new Stage(el,{span:2.25,width:4.5,camera:[0,.3,12],target:[0,0,0],exposure:.82}),r=s.root;
  const ink=material('#253e38',{metalness:.68,roughness:.32}),steel=material('#a6b2b1',{metalness:.94,roughness:.24}),sage=material('#7f8b78',{roughness:.82});
- label(r,{x:.0,y:.82,z:-.2,w:4.1,h:1.1,draw(c,w,h){c.font='italic '+h*.90+'px Georgia';c.fillStyle='#b4baa9';c.textAlign='center';c.fillText('Education',w/2,h*.80)}});
- label(r,{x:.45,y:-.71,z:-.2,w:3.6,h:1.05,draw(c,w,h){c.font=h*.82+'px Georgia';c.fillStyle='#60746a';c.textAlign='center';c.fillText('& practice.',w/2,h*.80)}});
+ label(r,{x:.0,y:.82,z:-.2,w:4.1,h:1.1,draw(c,w,h){c.font='italic '+h*.76+'px Georgia';c.fillStyle='#b4baa9';c.textAlign='center';c.fillText('Education',w/2,h*.80)}});
+ label(r,{x:.45,y:-.71,z:-.2,w:3.6,h:1.05,draw(c,w,h){c.font=h*.72+'px Georgia';c.fillStyle='#60746a';c.textAlign='center';c.fillText('& practice.',w/2,h*.80)}});
  const hub=group(r,.12,.06,.2),hands=[];
  function hand(length,width,mat,z){const g=group(hub,0,0,z),shape=new T.Shape();shape.moveTo(-width*.2,-.22);shape.quadraticCurveTo(-width*.43,length*.24,-width*.50,length*.58);shape.quadraticCurveTo(-width*.62,length*.73,0,length);shape.quadraticCurveTo(width*.62,length*.73,width*.50,length*.58);shape.quadraticCurveTo(width*.43,length*.24,width*.2,-.22);shape.closePath();part(g,new T.ExtrudeGeometry(shape,{depth:.038,bevelEnabled:true,bevelSize:.009,bevelThickness:.009,bevelSegments:3,curveSegments:24}),mat);oval(g,0,length*.66,.054,width*.15,width*.15,.013,steel,20);return g}
  const hour=hand(.95,.16,ink,0),minute=hand(1.46,.105,ink,.09),second=group(hub,0,0,.20);rod(second,[0,-.35,0],[0,1.67,0],.009,steel);oval(hub,0,0,.28,.075,.075,.046,steel,24);

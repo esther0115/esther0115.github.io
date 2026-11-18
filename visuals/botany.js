@@ -1,4 +1,4 @@
-import {T,group,part,material,tube,clamp,smooth,mix} from './scene.js?v=1118f';
+import {T,group,part,material,tube,clamp,smooth,mix} from './scene.js?v=1118g';
 // A single connected tube with a five-lobed, everted lip. Rings retain their
 // topology and attachment point through the whole opening motion.
 export function corollaPoint(u,a,open){

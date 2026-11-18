@@ -1,5 +1,5 @@
-import {T,Stage,group,part,box,oval,rod,tube,label,material,contactShadow,smooth,mix,clamp,reduced} from './scene.js?v=1118f';
-import {createBunny} from './plush.js?v=1118f';
+import {T,Stage,group,part,box,oval,rod,tube,label,material,contactShadow,smooth,mix,clamp,reduced} from './scene.js?v=1118g';
+import {createBunny} from './plush.js?v=1118g';
 export function createMachine(el,{onComplete=()=>{},onStatus=()=>{}}={}){
  const stage=new Stage(el,{span:2.8,width:4.2,target:[0,2.05,0],camera:[4,3.6,15],exposure:.79});
  const r=stage.root,ivory=material('#ddd8c5',{roughness:.74}),sage=material('#718276',{roughness:.72}),dark=material('#354f48',{roughness:.78}),steel=material('#a9b5ae',{metalness:.8,roughness:.29}),rubber=material('#303d37',{roughness:.92}),lining=material('#aaa1b3',{roughness:.95});

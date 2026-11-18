@@ -1,4 +1,4 @@
-import {T,group,part,oval,material,tube,label,seeded,clamp} from './scene.js?v=1118f';
+import {T,group,part,oval,material,tube,label,seeded,clamp} from './scene.js?v=1118g';
 // Share the loaded image with the linear bump texture only after decoding.
 const pileBump=new T.Texture();
 const furTexture=new T.TextureLoader().load(new URL('../assets/textiles/ivory-short-pile.png',import.meta.url).href,tex=>{pileBump.image=tex.image;pileBump.needsUpdate=true;});furTexture.colorSpace=T.SRGBColorSpace;furTexture.wrapS=furTexture.wrapT=T.RepeatWrapping;furTexture.repeat.set(2.7,2.7);furTexture.anisotropy=8;
