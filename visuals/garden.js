@@ -1,4 +1,4 @@
-import {T,group,box,oval,rod,material} from './scene.js?v=1118i';
+import {T,group,box,oval,rod,material} from './scene.js?v=1118j';
 const experiences=[
  ['ucl-ba','UCL · 全球人道主义研究','2022 – 2025','本科教育','伦敦大学学院（UCL），全球人道主义研究本科。','#journey'],
  ['deloitte','德勤管理咨询（上海）有限公司','2024.06 – 2024.09','储能产业研究','以企查查数据为底表，按信用代码去重，核验官网、招聘和中标信息；清洗企业问卷，按产业链环节分类。','#experience'],
@@ -16,7 +16,7 @@ export function setupGarden(view,el){
  themes.forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.className='garden-hour';b.style.setProperty('--x',50+43*Math.sin(i*Math.PI/6)+'%');b.style.setProperty('--y',50-43*Math.cos(i*Math.PI/6)+'%');b.title=(i||12)+' 点 · '+t[1];b.setAttribute('aria-label',b.title);b.innerHTML=svg(i);b.onclick=()=>select(i,true);ring.append(b)});
  const pointer=document.createElement('button');pointer.className='explore-pointer';pointer.setAttribute('aria-label','拖动探索指针；左右键选择，回车查看');pointer.innerHTML='<span></span>';el.append(pointer);
  const panel=document.createElement('div');panel.className='time-theme-panel';panel.hidden=true;fig.append(panel);
- const modal=document.createElement('dialog');modal.className='garden-closeup';modal.innerHTML='<header><span>时间花园 · 花枝近景</span><button data-return>返回时间花园</button><button data-fold>收起花朵</button></header><div class="garden-closeup-layout"><div class="garden-viewport"></div><article class="flower-reading"><nav aria-label="选择花朵"></nav><small>花内意象 · 艺术化解释</small><h2></h2><time></time><h3></h3><p></p><a>深入查看 ↗</a></article></div>';document.body.append(modal);
+ const modal=document.createElement('dialog');modal.className='garden-closeup';modal.innerHTML='<header><span>时间花园 · 花枝近景</span><button data-return>返回时间花园</button><button data-fold>收起花朵</button></header><div class="garden-closeup-layout"><div class="garden-viewport"></div><article class="flower-reading"><nav aria-label="选择花朵"></nav><h2></h2><time></time><h3></h3><p></p><a>深入查看 ↗</a></article></div>';document.body.append(modal);
  const nav=modal.querySelector('nav');experiences.forEach((r,i)=>{const b=document.createElement('button');b.textContent=['本科','德勤','普华永道','硕士','农政齐民'][i];b.dataset.contentId=r[0];b.onclick=()=>showFlower(i);b.onfocus=()=>view.selectFlower(i);nav.append(b)});
  const motifs=view.branch.blooms.map((f,i)=>{const g=group(f.mesh,0,0,.43),mat=material('#b6c2a2',{roughness:.9});g.scale.setScalar(.14);g.visible=false;f.mesh.userData.discovered=g;if(i===0){for(let n=0;n<3;n++){const page=box(g,(n-1)*.26,0,0,.24,.60,.035,mat,.008);page.rotation.y=(n-1)*.3}rod(g,[-.5,-.4,0],[.4,-.2,.2],.025,mat)}
  if(i===1){for(let n=0;n<4;n++)box(g,(n-1.5)*.25,-.3+n*.10,n*.08,.22,.25+n*.1,.12,mat,.01)}

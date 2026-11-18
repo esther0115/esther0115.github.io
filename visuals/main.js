@@ -1,6 +1,6 @@
-import {createMachine} from './machine.js?v=1118i';
-import {createClock} from './clock.js?v=1118i';
-import {setupGarden} from './garden.js?v=1118i';
+import {createMachine} from './machine.js?v=1118j';
+import {createClock} from './clock.js?v=1118j';
+import {setupGarden} from './garden.js?v=1118j';
 const $=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)],reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const records=[
  {title:'Seoul Deck',date:'2026.06 – 2026.10',href:'#seoul',summary:'把收藏的首尔攻略，变成有口碑依据、能随时调整的一天。独立完成需求分析、产品设计、规则与评测。',facts:[['226 篇','小红书帖子'],['5,817 条','评论构成需求与口碑依据']],color:'#efb7ca'},
@@ -25,7 +25,7 @@ all('[data-prize]').forEach((b,i)=>b.dataset.contentId=records[i].href.slice(1))
 all('[data-prize]').forEach(b=>b.onclick=()=>choose(Number(b.dataset.prize)));$('#claw-left').onclick=()=>choose(selected-1);$('#claw-right').onclick=()=>choose(selected+1);
 function setBusy(value){busy=value;$('#claw-stage').setAttribute('aria-busy',String(value));all('.machine-controls button,[data-prize]').forEach(b=>b.disabled=value);$('#claw-grab').textContent=value?'正在抓取…':'抓住它 ↓'}
 let assisted=true;
-function performGrab(){if(busy)return;if(reduce.matches){openPrize();return;}if(!clawView)mountMachine($('#claw-stage'));if(!clawView){openPrize();return;}setBusy(true);$('#machine-status').textContent='抓手下降，正在带回「'+records[selected].title+'」…';clawView.grab(selected,(i,success)=>{setBusy(false);if(success){choose(i);$('#machine-status').textContent='玩偶已落稳，项目标签已加入收藏。';renderCollection()}else $('#machine-status').textContent='未抓取新玩偶；可调整位置重试、切换帮我抓，或阅读已有收藏。'},assisted)};
+function performGrab(){if(busy)return;if(reduce.matches){openPrize();return;}if(!clawView)mountMachine($('#claw-stage'));if(!clawView){openPrize();return;}setBusy(true);$('#machine-status').textContent='抓手下降，正在带回「'+records[selected].title+'」…';clawView.grab(selected,(i,success)=>{setBusy(false);if(success){choose(i);$('#machine-status').textContent='玩偶已落稳，已打开对应项目卡片。';renderCollection();openPrize()}else $('#machine-status').textContent='未抓取新玩偶；可调整位置重试、切换帮我抓，或阅读已有收藏。'},assisted)};
 $('#claw-grab').onclick=performGrab;
 $('#claw-stage').onkeydown=e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' ','Enter'].includes(e.key)){e.preventDefault();if(e.key===' '||e.key==='Enter')$('#claw-grab').click();else if(assisted)choose(selected+(e.key==='ArrowLeft'?-1:1));else clawView?.move(e.key==='ArrowLeft'?-1:e.key==='ArrowRight'?1:0,e.key==='ArrowUp'?-1:e.key==='ArrowDown'?1:0)}};
 
